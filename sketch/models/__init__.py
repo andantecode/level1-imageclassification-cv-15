@@ -1,1 +1,1 @@
-from .model import Eva02ConvNextClassifier
+from .base_model import BaseClassifier
