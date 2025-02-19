@@ -71,7 +71,7 @@ class BaseClassifier(pl.LightningModule):
     def train_dataloader(self):
         return DataLoader(
             dataset=self.train_dataset,
-            batch_size=4,
+            batch_size=16,
             shuffle=True,
             num_workers=8,
             collate_fn=mixup_cutmix_collate_fn
@@ -80,7 +80,7 @@ class BaseClassifier(pl.LightningModule):
     def val_dataloader(self):
         return DataLoader(
             dataset=self.val_dataset,
-            batch_size=4,
+            batch_size=16,
             shuffle=False,
             num_workers=8,
             drop_last=False

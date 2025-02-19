@@ -1,4 +1,3 @@
-import sys
 import os
 import argparse
 import pandas as pd
@@ -85,8 +84,6 @@ def main():
     parser.add_argument("--gradient_clip_val", type=float, default=2.0, help="Gradient clipping value")
     parser.add_argument("--output_dir", type=str, default="checkpoints", help="Directory to save checkpoints")
     args = parser.parse_args()
-
-    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
     dataset, num_classes = load_data(args.train_data_dir, args.train_info_file)
 
