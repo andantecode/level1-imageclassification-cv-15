@@ -5,7 +5,7 @@
 
 ## 프로젝트 개요
 
-이 프로젝트는 스케치 이미지 분류를 위해 ConvNextV2와 Eva02 모델을 활용하며, stacking 기법과 Stratified KFold를 적용하여 분류 성능을 극대화하는 것을 목표로 한다. 또한, 데이터 전처리 파이프라인에서는 기하학적 변환, Mixup 및 Cutmix 기법을 적용하여 데이터 증강을 수행한다.
+이 프로젝트는 스케치 이미지 분류를 위해 ConvNeXtV2와 Eva02 모델을 활용하며, stacking 기법과 Stratified KFold를 적용하여 분류 성능을 극대화하는 것을 목표로 한다. 또한, 데이터 전처리 파이프라인에서는 기하학적 변환, Mixup 및 Cutmix 기법을 적용하여 데이터 증강을 수행한다.
 
 ![Image](https://github.com/user-attachments/assets/eb4552d5-96b6-4db0-9482-d8ca0d59262c)
 
@@ -14,7 +14,7 @@
 ```bash
 sketch/
 ├── datasets/               # 데이터셋 로딩 및 전처리 관련 코드
-├── models/                 # 모델 정의 (ConvNextV2, Eva02, Stacking 및 Single 모델 등)
+├── models/                 # 모델 정의 (ConvNeXtV2, Eva02, Stacking 및 Single 모델 등)
 ├── tools/                  # 학습 및 평가 스크립트 (train.py, inference.py)
 ├── utils/                  # 유틸리티 함수 및 도구 (데이터 변환, 콜백 등)
 └── sketch_predictor.py     # 추론용 스크립트 (Streamlit 앱 포함)
@@ -57,7 +57,7 @@ sketch/
 
 ## 모델 구성
 
-- ConvNextV2와 Eva02 모델을 활용
+- ConvNeXtV2와 Eva02 모델을 활용
 - 두 모델의 출력을 stacking하여 feature를 결합하는 방식 적용
 - Stratified KFold 기법을 활용해 데이터를 여러 Fold로 분할하여 학습
 
