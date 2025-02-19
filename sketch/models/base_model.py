@@ -15,7 +15,7 @@ class BaseClassifier(pl.LightningModule):
                  num_classes=500, 
                  lr=3e-5, 
                  weight_decay=1e-2,
-                 model_size: str = "tiny"   # "large" 혹은 "tiny"
+                 model_size: str = "large"   # "large" 혹은 "tiny"
                 ):
         super().__init__()
         self.train_dataset = train_dataset

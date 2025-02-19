@@ -19,17 +19,12 @@ from datasets.dataset import CustomDataset
 from utils.transform import AlbumentationsTransform
 
 
-def load_models(root_path: str, model_type: str):
+def load_models(file_path: str, model_type: str):
     models = []
     # 모델 타입에 따라 불러올 클래스를 선택
     ModelClass = StackingClassifier if model_type == "stacking" else SingleClassifier
-
-    for dirpath, _, filenames in os.walk(root_path):
-        for file in filenames:
-            if file.endswith(".ckpt"):  # checkpoint 파일 확장자가 .ckpt라고 가정
-                file_path = os.path.join(dirpath, file)
-                print(f"Loading checkpoint: {file_path}")
-                models.append(ModelClass.load_from_checkpoint(file_path))
+    
+    models.append(ModelClass.load_from_checkpoint(file_path))
     return models
 
 

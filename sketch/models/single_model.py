@@ -9,7 +9,7 @@ class SingleClassifier(BaseClassifier):
                  num_classes=500, 
                  lr=3e-5, 
                  weight_decay=1e-2,
-                 model_size: str = "tiny"
+                 model_size: str = "large"
                 ):
         super().__init__(train_dataset, val_dataset, num_classes, lr, weight_decay, model_size)
         # classifier는 convnext output dimension만 사용
